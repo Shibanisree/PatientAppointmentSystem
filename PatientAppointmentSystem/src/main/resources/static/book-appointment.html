@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>Book Appointment</h2>
+    <form id="appointmentForm">
+        <div class="form-group">
+            <label for="patientName">Your Name:</label>
+            <input type="text" id="patientName" name="patientName" required>
+        </div>
+        <div class="form-group">
+            <label for="patientEmail">Your Email:</label>
+            <input type="email" id="patientEmail" name="patientEmail" required>
+        </div>
+        <div class="form-group">
+            <label for="doctorId">Select Doctor:</label>
+            <select id="doctorId" name="doctorId" required>
+                <option value="">Select a doctor</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="appointmentTime">Appointment Time:</label>
+            <input type="datetime-local" id="appointmentTime" name="appointmentTime" required>
+        </div>
+        <div class="form-group">
+            <label for="reason">Reason for Appointment:</label>
+            <textarea id="reason" name="reason" required></textarea>
+        </div>
+        <button type="submit">Book</button>
+    </form>
+    <p id="success" style="color: green; display: none;">Appointment booked successfully!</p>
+    <a href="/index.html">Back to Home</a>
+</div>
+<script src="/js/book-appointment.js"></script>
+</body>
+</html>

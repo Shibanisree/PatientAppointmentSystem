@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h2>Admin Dashboard</h2>
+    <form id="logoutForm" action="/perform_logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+    <h3>Add Doctor</h3>
+    <form id="doctorForm">
+        <div class="form-group">
+            <label for="doctorName">Doctor Name:</label>
+            <input type="text" id="doctorName" name="doctorName" required>
+        </div>
+        <div class="form-group">
+            <label for="specialty">Specialty:</label>
+            <input type="text" id="specialty" name="specialty" required>
+        </div>
+        <button type="submit">Add Doctor</button>
+    </form>
+    <h3>Add Appointment</h3>
+    <form id="adminAppointmentForm">
+        <div class="form-group">
+            <label for="adminPatientName">Patient Name:</label>
+            <input type="text" id="adminPatientName" name="adminPatientName" required>
+        </div>
+        <div class="form-group">
+            <label for="adminPatientEmail">Patient Email:</label>
+            <input type="email" id="adminPatientEmail" name="adminPatientEmail" required>
+        </div>
+        <div class="form-group">
+            <label for="adminDoctorId">Select Doctor:</label>
+            <select id="adminDoctorId" name="adminDoctorId" required>
+                <option value="">Select a doctor</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="adminAppointmentTime">Appointment Time:</label>
+            <input type="datetime-local" id="adminAppointmentTime" name="adminAppointmentTime" required>
+        </div>
+        <div class="form-group">
+            <label for="adminReason">Reason:</label>
+            <textarea id="adminReason" name="adminReason" required></textarea>
+        </div>
+        <button type="submit">Add Appointment</button>
+    </form>
+    <h3>Appointments</h3>
+    <div class="form-group">
+        <label for="doctorFilter">Filter by Doctor:</label>
+        <select id="doctorFilter">
+            <option value="">All Doctors</option>
+        </select>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Time</th>
+            <th>Reason</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="appointments"></tbody>
+    </table>
+</div>
+<script src="/js/admin-dashboard.js"></script>
+</body>
+</html>
